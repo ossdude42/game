@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add custom styling here */
+  </style>
+</head>
+<body>
+  <nav>
+    <img src="logo.png">
+    <h1>Heroes of the Elements</h1>
+    <a href="index.html">Homepage</a>
+    <a href="credits.html">Credits</a>
+    <a href="plans.html">Plans</a>
+    <a href="gamelink.html">Game</a>
+  </nav>
+    <br><br><br><br><br><br>
+    <form onsubmit="saveUser(event)">
+      <label for="username"><b>Username:</b></label>
+      <input type="text" id="username" name="username"><br>
+      <label for="password"><b>Password:</b></label>
+      <input type="password" id="password" name="password"><br>
+      <input type="submit" value="Login">
+    </form>
+  <script>
+    function saveUser(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      // Save the username and password to localStorage or any other storage mechanism
+      // Example storing in localStorage:
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+      // Add your validation logic here
+      if (username === "admin" && password === "password") {
+        alert("Login successful");
+        // Perform further actions or redirect
+      } else {
+        alert("Invalid username or password");
+      }
+    }
+  </script>
+</body>
+</html>

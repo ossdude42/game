@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <nav>
+      <img src="logo.png">
+      <h1>Heroes of the Elements</h1>
+      <a href="index.html">Homepage</a>
+      <a href="credits.html">Credits</a>
+      <a href="plans.html">Plans</a>
+      <a href="login.html">Log in</a>
+    </nav>
+    <link rel="stylesheet" href="style.css">
+    <h1><b><br><br><br>If you actually read the homepage, you would know that the game isn't being released for a hot minute, but if you want to play earlier than expected, talk to a developer. You most likely will not play early, so don't hope you will get early early access. 2026 or 2027 is still the planned release date. Thank you for your patience.</b></h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #player {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      top: 400px;
+      left: 650px;
+      transition: top 0.1s ease, left 0.1s ease; /* Increase transition speed */
+    }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+  <script>
+    const player = document.getElementById("player");
+    const step = 20; // Increase movement speed
+    document.addEventListener("keydown", function(event) {
+      const playerX = player.offsetLeft;
+      const playerY = player.offsetTop;
+      let newLeft = playerX;
+      let newTop = playerY;
+      switch (event.keyCode) {
+        case 37: // Left arrow key
+          newLeft = playerX - step;
+          break;
+        case 38: // Up arrow key
+          newTop = playerY - step;
+          break;
+        case 39: // Right arrow key
+          newLeft = playerX + step;
+          break;
+        case 40: // Down arrow key
+          newTop = playerY + step;
+          break;
+      }
+      player.style.left = newLeft + "px";
+      player.style.top = newTop + "px";
+    });
+  </script>
+</body>
+</html>
